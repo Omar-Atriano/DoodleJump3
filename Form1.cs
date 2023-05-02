@@ -82,7 +82,7 @@ namespace DoodleJump3
                 player.fPlayerPosX = 10;
 
             }
-            else if(player.fPlayerPosX > 11) 
+            else if(player.fPlayerPosX > 10) 
             {
                 player.fPlayerPosX = 0;
             }
