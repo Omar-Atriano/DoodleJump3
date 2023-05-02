@@ -24,7 +24,7 @@ namespace DoodleJump3
         private string sLevel;
         public Bitmap bmp;
         public Graphics g;
-        Sprite coin;
+        Sprite monster;
         SoundPlayer soundPlayer;
         int score;
         bool isP1 = true;
@@ -338,25 +338,25 @@ namespace DoodleJump3
             sLevel += ".....5...5.";
             sLevel += "...........";
             sLevel += "..5........";
-            sLevel += "......5....";
+            sLevel += "......5.6..";
             sLevel += ".5.......5.";
             sLevel += "...........";
             sLevel += "...5..5....";
             sLevel += "...........";
+            sLevel += ".....5.....";
             sLevel += "...........";
-            sLevel += ".5.5.......";
-            sLevel += "........5..";
+            sLevel += "..6.....5..";
             sLevel += ".....5.....";
             sLevel += "5..........";
-            sLevel += "...5..5....";
+            sLevel += "...5.......";
             sLevel += ".........5.";
             sLevel += "..5........";
             sLevel += "......5....";
             sLevel += "5........5.";
-            sLevel += "...5...6...";
+            sLevel += "...5.......";
             sLevel += "...........";
-            sLevel += ".....5..5..";
-            sLevel += "5..5.......";
+            sLevel += "........5..";
+            sLevel += "5..........";
             sLevel += "........5..";
             sLevel += "......5....";
             sLevel += ".5.........";
@@ -390,6 +390,7 @@ namespace DoodleJump3
             g = Graphics.FromImage(bmp);
             g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
             g.SmoothingMode = SmoothingMode.HighSpeed;
+            
         }
 
         public void Draw(PointF cameraPos, string message, Player player)
@@ -442,7 +443,9 @@ namespace DoodleJump3
 
                         case '6':
 
-                            g.DrawImage(Resource1.monster, stepX, stepY + nTileHeight/2, nTileWidth, (nMonsterHeight/4));
+
+                            monster = new Sprite(new Size(230, 160), new Size(60, 40), new Point((int)stepX, (int)stepY), Resource1.monster, Resource1.monster);
+                            monster.Display(g);
                             break;
                     }
                     //g.DrawRectangle(Pens.Gray, stepX, stepY, nTileWidth, nTileHeight);
