@@ -125,17 +125,22 @@ namespace DoodleJump3
             //bPlayerOnGround = false;
             if (fPlayerVelY <= 0)// up
             {
-                //if ((map.GetTile((int)(fNewPlayerPosX + 0.0f), (int)(fNewPlayerPosY + 0.0f)) != '.') || (map.GetTile((int)(fNewPlayerPosX + 0.9f), (int)(fNewPlayerPosY + 0.0f)) != '.'))
-                //{
-                //    fNewPlayerPosY = (int)fNewPlayerPosY + 1;
-                //    fPlayerVelY = 0;
-                //}
+                if ((map.GetTile((int)(fNewPlayerPosX + 0.0f), (int)(fNewPlayerPosY + 0.0f)) == '6') || (map.GetTile((int)(fNewPlayerPosX + 0.9f), (int)(fNewPlayerPosY + 0.0f)) == '6'))
+                {
+                    fNewPlayerPosY = (int)fNewPlayerPosY + 1;
+                    fPlayerVelY = 0;
+                }
             }
             else
             {
                 if ((map.GetTile((int)(fNewPlayerPosX + 0.0f), (int)(fNewPlayerPosY + 1.0f)) != '.') || (map.GetTile((int)(fNewPlayerPosX + 0.9f), (int)(fNewPlayerPosY + 1f)) != '.'))
                 {
-                    fNewPlayerPosY = (int)fNewPlayerPosY;
+                    if ((map.GetTile((int)(fNewPlayerPosX + 0.0f), (int)(fNewPlayerPosY + 1.0f)) == '6') || (map.GetTile((int)(fNewPlayerPosX + 0.9f), (int)(fNewPlayerPosY + 1f)) == '6'))
+                    {
+                        map.SetTile((int)(fNewPlayerPosX + 0.0f), (int)(fNewPlayerPosY + 1.0f), '.');
+                        map.SetTile((int)(fNewPlayerPosX + 0.9f), (int)(fNewPlayerPosY + 1f), '.');
+                    }
+                        fNewPlayerPosY = (int)fNewPlayerPosY;
                     fPlayerVelY = 0;
                     if (!bPlayerOnGround)
                         Frame(0);
