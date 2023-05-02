@@ -7,6 +7,7 @@ using System.Media;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DoodleJump3
 {
@@ -15,8 +16,8 @@ namespace DoodleJump3
         public string map;
 
         int divs =1;
-        public int nTileWidth = 20;
-        public int nTileHeight = 20;
+        public int nTileWidth = 40;//Estaba en 20
+        public int nTileHeight = 20;//Estaba en 20
         int nLevelWidth, nLevelHeight;
         private string sLevel;
         public Bitmap bmp;
@@ -29,60 +30,160 @@ namespace DoodleJump3
         public Map1(Size size)
         {
             sLevel = "";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "................................55555555555555555555555555.........";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "........555555555555555555555555555555555555555....................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...............................5555555555555555555555555555555.....";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "....................55555555555555555555555555.....................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
-            sLevel += ".....55555555555555555555555555....................................";
-            sLevel += "...................................................................";
-            sLevel += "...................................................................";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += ".....5..5..";
+            sLevel += "5..5.......";
+            sLevel += "..5.....5..";
+            sLevel += "......5....";
+            sLevel += ".5.........";
+            sLevel += "...........";
+            sLevel += "55555555555";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
+            sLevel += "...........";
 
 
 
-            nLevelWidth = 68;
-            nLevelHeight = 49;
+            nLevelWidth = 11;
+            nLevelHeight = 148;
 
             bmp = new Bitmap(size.Width / divs, size.Height / divs);
 
@@ -120,69 +221,19 @@ namespace DoodleJump3
                     c = GetTile(x + (int)fOffsetX, y + (int)fOffsetY);
                     stepX = x * nTileWidth - fTileOffsetX;
                     stepY = y * nTileHeight - fTileOffsetY;
-                    g.FillRectangle(Brushes.Cyan, stepX, stepY, nTileWidth, nTileHeight);
+                    g.FillRectangle(Brushes.White, stepX, stepY, nTileWidth, nTileHeight);
                     switch (c)
                     {
                         case '.':
-                            g.FillRectangle(Brushes.White, stepX, stepY, nTileWidth, nTileHeight);
+                            //pictureBox1.Image = Resource1.bck_2x;
+                            //g.FillRectangle(Brushes.Red, stepX, stepY, nTileWidth, nTileHeight);
+                            //g.FillRectangle(Brushes.White, stepX + 1, stepY + 1, nTileWidth - 1, nTileHeight - 1);
                             break;
                         case '5':
-                            g.FillRectangle(Brushes.Red, stepX, stepY, nTileWidth, nTileHeight);
-                            g.FillRectangle(Brushes.Black, stepX, stepY, nTileWidth, nTileHeight);
-                            g.FillRectangle(Brushes.DarkRed, stepX + 1, stepY + 1, nTileWidth - 2, nTileHeight - 2);
-                            g.FillEllipse(Brushes.DarkRed, stepX, stepY, nTileWidth, nTileHeight);
-                            g.FillEllipse(Brushes.DarkSlateGray, stepX, stepY, nTileWidth / 2, nTileHeight / 2);
-                            g.DrawLine(Pens.Black, stepX + nTileHeight / 2, stepY + nTileHeight / 2, stepX + nTileHeight, stepY + nTileHeight - 3);
-                            g.DrawLine(Pens.Maroon, stepX + nTileHeight / 2, 2 + stepY + nTileHeight / 2, 1 + stepX + nTileHeight, stepY + nTileHeight - 2);
-                            g.DrawLine(Pens.Black, stepX + nTileHeight / 2, stepY, stepX + nTileHeight / 2, stepY + nTileHeight * 2 / 3);
-                            g.DrawLine(Pens.Black, 1 + stepX + nTileHeight / 2, stepY + 1, 2 + stepX + nTileHeight / 2, 3 + stepY + nTileHeight * 2 / 3);
-                            g.DrawLine(Pens.Maroon, 2 + stepX + nTileHeight / 2, stepY, 1 + stepX + nTileHeight / 2, stepY + nTileHeight * 2 / 3);
-                            g.DrawLine(Pens.Black, stepX + nTileHeight / 2, stepY + nTileHeight * 2 / 3, stepX, stepY + nTileHeight / 3);
-                            g.DrawRectangle(Pens.Black, stepX + nTileHeight / 2, stepY, nTileWidth, nTileHeight - 1);
-                            g.DrawRectangle(Pens.Gray, stepX, stepY, nTileWidth, nTileHeight - 1);
+
+                            g.DrawImage(Resource1.green,stepX, stepY + nTileHeight / 2, nTileWidth, (nTileHeight/2));
                             break;
-                        //case 'a'://ejemplo para sustituir parte del mapa con otra animación
-                        //    coin.posX = stepX;
-                        //    coin.posY = stepY;
-                        //    coin.MoveSlow(2);
-                        //    coin.Display(g);
-                        //    if (coin.counter > 50)
-                        //    {
-                        //        //SetTile(x + (int)fOffsetX, y + (int)fOffsetY, '.');
-                        //        coin.counter = 0;
-                        //    }
-                        //    break;
-                        //case 'B':
-                        //    g.FillRectangle(Brushes.Black, stepX, stepY, nTileWidth, nTileHeight);
-                        //    g.FillPolygon(Brushes.Gray, new PointF[] { new PointF(stepX, stepY), new PointF(stepX + nTileWidth, stepY), new PointF(stepX, stepY + nTileHeight) });
-                        //    g.FillRectangle(Brushes.DarkGray, stepX + nTileHeight / 4, stepY + nTileHeight / 4, nTileWidth / 2, nTileHeight / 2);
-                        //    g.DrawLine(Pens.DarkGray, stepX, stepY, stepX + nTileWidth, stepY + nTileHeight);
-                        //    break;
-                        //case '?':
-                        //    g.FillRectangle(Brushes.Yellow, stepX, stepY, nTileWidth, nTileHeight);
-                        //    break;
-                        //case 'o':
-                        //    coin.posX = stepX;
-                        //    coin.posY = stepY;
-                        //    coin.MoveSlow(7);
-                        //    coin.Display(g);
-                        //    break;
-                        //case '*':
-                        //    g.DrawImage(Resource1.questionS, stepX, stepY, nTileWidth, nTileHeight);
-                            //break;
-                        default:
-                            g.FillRectangle(Brushes.Black, stepX, stepY, nTileWidth, nTileHeight);
-                            g.FillRectangle(Brushes.DarkRed, stepX + 1, stepY + 1, nTileWidth - 2, nTileHeight - 2);
-                            g.DrawLine(Pens.Black, stepX + nTileHeight / 2, stepY + nTileHeight / 2, stepX + nTileHeight, stepY + nTileHeight - 3);
-                            g.DrawLine(Pens.Maroon, stepX + nTileHeight / 2, 2 + stepY + nTileHeight / 2, 1 + stepX + nTileHeight, stepY + nTileHeight - 2);
-                            g.DrawLine(Pens.Black, stepX + nTileHeight / 2, stepY, stepX + nTileHeight / 2, stepY + nTileHeight * 2 / 3);
-                            g.DrawLine(Pens.Black, 1 + stepX + nTileHeight / 2, stepY + 1, 2 + stepX + nTileHeight / 2, 3 + stepY + nTileHeight * 2 / 3);
-                            g.DrawLine(Pens.Maroon, 2 + stepX + nTileHeight / 2, stepY, 1 + stepX + nTileHeight / 2, stepY + nTileHeight * 2 / 3);
-                            g.DrawLine(Pens.Black, stepX + nTileHeight / 2, stepY + nTileHeight * 2 / 3, stepX, stepY + nTileHeight / 3);
-                            g.DrawRectangle(Pens.Black, stepX + nTileHeight / 2, stepY, nTileWidth, nTileHeight - 1);
-                            g.DrawRectangle(Pens.Gray, stepX, stepY, nTileWidth, nTileHeight - 1);
-                            //g.DrawImage(Resource1.TILER, stepX, stepY, nTileWidth, nTileHeight);//heavy
-                            break;
+                        
                     }
                     //g.DrawRectangle(Pens.Gray, stepX, stepY, nTileWidth, nTileHeight);
                 }

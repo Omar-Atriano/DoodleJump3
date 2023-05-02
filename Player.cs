@@ -12,7 +12,7 @@ namespace DoodleJump3
         Sprite mainSprite;
 
         public float fPlayerPosX = 1.0f;
-        public float fPlayerPosY = 1.0f;
+        public float fPlayerPosY = 120.0f;
 
         private float fPlayerVelX = 0.0f;
         private float fPlayerVelY = 0.0f;

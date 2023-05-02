@@ -108,7 +108,7 @@ namespace DoodleJump3
 
         public void init()
         {
-            //pictureBox1.Image = Resource1.bck_2x;
+
             map1 = new Map1(pictureBox1.Size);
             player = new Player();
             pictureBox1.Image = map1.bmp;
