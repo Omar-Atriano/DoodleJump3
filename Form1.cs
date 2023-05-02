@@ -39,7 +39,14 @@ namespace DoodleJump3
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (player.FPlayerVelY == 0)// sin brincar o cayendo
+            {
+                player.FPlayerVelY = -15;
+                player.Frame(2);
+                player.bPlayerOnGround = false;
+            }
             UpdateEnv();
+
         }
         private void UpdateEnv()
         {
@@ -69,12 +76,10 @@ namespace DoodleJump3
                     //nDirModY = 0;
                     break;
                 case Keys.Up:
-                    player.FPlayerVelY = -6.0f;
-                    player.bPlayerOnGround = false;
+                    //player.FPlayerVelY = -6.0f;
+                    //player.bPlayerOnGround = false;
                     break;
-                case Keys.Down:
-                    player.FPlayerVelY = 6.0f;
-                    break;
+
             }
 
             UpdateEnv();
@@ -123,35 +128,7 @@ namespace DoodleJump3
 
         }
 
-        private void GenerateIMG()
-        {
-            //// map properties
-            //int w = 100;// width
-            //int h = 500;// height
-            //int u = 45;//unit
-            //char v;
 
-            //img = new Bitmap(w * u, h * u);
-            //gImg = Graphics.FromImage(img);
-
-            //this.Text = img.Width.ToString();
-
-            //for (int y = 0; y < h; y++)
-            //{
-            //    for (int x = 0; x < w; x++)
-            //    {
-            //        v = map1.map[(y * w) + x];
-            //        if (v == '5')
-            //            gImg.FillRectangle(Brushes.Tomato, x * u, y * u, u, u);
-            //        //if (v == '*')
-            //        ////    gImg.DrawImage(wood02, x * u, y * u, u, u);
-            //        //if (v == '5')
-            //        //    gImg.DrawImage(wood, x * u, y * u, u, u);
-            //    }
-            //}
-
-
-        }
 
 
     }

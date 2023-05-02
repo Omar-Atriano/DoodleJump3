@@ -125,6 +125,7 @@ namespace DoodleJump3
                 {
                     fNewPlayerPosY = (int)fNewPlayerPosY + 1;
                     fPlayerVelY = 0;
+                    //fPlayerVelY = 10;
                 }
             }
             else
