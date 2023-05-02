@@ -55,7 +55,16 @@ namespace DoodleJump3
             if (right)
                 player.Right(fElapsedTime);
 
-            fCameraPosX = player.fPlayerPosX;
+            //fCameraPosX = player.fPlayerPosX;
+            if(player.fPlayerPosX < 0)
+            {
+                player.fPlayerPosX = 10;
+
+            }
+            else if(player.fPlayerPosX > 11) 
+            {
+                player.fPlayerPosX = 0;
+            }
             fCameraPosY = player.fPlayerPosY;
 
             map1.Draw(new PointF(fCameraPosX, fCameraPosY), player.fPlayerPosX.ToString(), player);
