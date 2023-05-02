@@ -93,40 +93,41 @@ namespace DoodleJump3
             float fNewPlayerPosX = fPlayerPosX + fPlayerVelX * fElapsedTime;
             float fNewPlayerPosY = fPlayerPosY + fPlayerVelY * fElapsedTime;
 
+            //Intercambia
             CheckPicks(map, fNewPlayerPosX, fNewPlayerPosY, 'o', '.');
+            //
             CheckPicks(map, fNewPlayerPosX, fNewPlayerPosY, '*', 'a');
 
 
             // COLLISION
             if (fPlayerVelX <= 0)//left
             {
-                if ((map.GetTile((int)(fNewPlayerPosX + 0.0f), (int)(fPlayerPosY + 0.0f)) != '.') || (map.GetTile((int)(fNewPlayerPosX + 0.0f), (int)(fPlayerPosY + 0.9f)) != '.'))
-                {
-                    if (fPlayerVelX != 0)
-                        fNewPlayerPosX = (int)fNewPlayerPosX + 1;
-                    fPlayerVelX = 0;
-                }
+                //if ((map.GetTile((int)(fNewPlayerPosX + 0.0f), (int)(fPlayerPosY + 0.0f)) != '.') || (map.GetTile((int)(fNewPlayerPosX + 0.0f), (int)(fPlayerPosY + 0.9f)) != '.'))
+                //{
+                //    if (fPlayerVelX != 0)
+                //        fNewPlayerPosX = (int)fNewPlayerPosX + 1;
+                //    fPlayerVelX = 0;
+                //}
             }
             else//right
             {
-                if ((map.GetTile((int)(fNewPlayerPosX + 1.0f), (int)(fPlayerPosY + 0.0f)) != '.') || (map.GetTile((int)(fNewPlayerPosX + 1.0f), (int)(fPlayerPosY + 0.9f)) != '.'))
-                {
-                    if (fPlayerVelX != 0)
-                        fNewPlayerPosX = (int)fNewPlayerPosX;
+                //if ((map.GetTile((int)(fNewPlayerPosX + 1.0f), (int)(fPlayerPosY + 0.0f)) != '.') || (map.GetTile((int)(fNewPlayerPosX + 1.0f), (int)(fPlayerPosY + 0.9f)) != '.'))
+                //{
+                //    if (fPlayerVelX != 0)
+                //        fNewPlayerPosX = (int)fNewPlayerPosX;
 
-                    fPlayerVelX = 0;
-                }
+                //    fPlayerVelX = 0;
+                //}
             }
 
             //bPlayerOnGround = false;
             if (fPlayerVelY <= 0)// up
             {
-                if ((map.GetTile((int)(fNewPlayerPosX + 0.0f), (int)(fNewPlayerPosY + 0.0f)) != '.') || (map.GetTile((int)(fNewPlayerPosX + 0.9f), (int)(fNewPlayerPosY + 0.0f)) != '.'))
-                {
-                    fNewPlayerPosY = (int)fNewPlayerPosY + 1;
-                    fPlayerVelY = 0;
-                    //fPlayerVelY = 10;
-                }
+                //if ((map.GetTile((int)(fNewPlayerPosX + 0.0f), (int)(fNewPlayerPosY + 0.0f)) != '.') || (map.GetTile((int)(fNewPlayerPosX + 0.9f), (int)(fNewPlayerPosY + 0.0f)) != '.'))
+                //{
+                //    fNewPlayerPosY = (int)fNewPlayerPosY + 1;
+                //    fPlayerVelY = 0;
+                //}
             }
             else
             {
