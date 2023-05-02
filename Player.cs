@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DoodleJump3
 {
@@ -13,6 +14,7 @@ namespace DoodleJump3
 
         public float fPlayerPosX = 2.0f;
         public float fPlayerPosY = 120.0f;
+        public bool go=false;
 
         private float fPlayerVelX = 0.0f;
         private float fPlayerVelY = 0.0f;
@@ -129,6 +131,8 @@ namespace DoodleJump3
                 {
                     fNewPlayerPosY = (int)fNewPlayerPosY + 1;
                     fPlayerVelY = 0;
+                    go = true;
+                    
                 }
             }
             else

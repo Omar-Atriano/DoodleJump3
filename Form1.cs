@@ -49,6 +49,25 @@ namespace DoodleJump3
             }
             UpdateEnv();
 
+            if (player.go)
+            {
+                timer1.Enabled = false;
+                MessageBox.Show("Game Over ");
+
+                DialogResult dialogResult = MessageBox.Show("Jugar de nuevo?", "Cerrar",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                switch (dialogResult)
+                {
+                    case DialogResult.Yes:
+                        init();
+                        break;
+
+                    case DialogResult.No:
+                        Close();
+                        break;
+                }
+            }
+
         }
         private void UpdateEnv()
         {
@@ -126,7 +145,7 @@ namespace DoodleJump3
 
         public void init()
         {
-
+            
             map1 = new Map1(pictureBox1.Size);
             player = new Player();
             pictureBox1.Image = map1.bmp;
@@ -134,6 +153,7 @@ namespace DoodleJump3
             left = false;
             right = false;
             sPlayer = new SoundPlayer(Resource1.jump);
+            timer1.Enabled = true;
         }
         public void Play()
         {

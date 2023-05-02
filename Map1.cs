@@ -147,7 +147,7 @@ namespace DoodleJump3
             sLevel += "...........";
             sLevel += ".....5.....";
             sLevel += "...........";
-            sLevel += "..6.....5..";
+            sLevel += "........5..";
             sLevel += ".....5.....";
             sLevel += "5..........";
             sLevel += "...5.......";
