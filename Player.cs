@@ -14,7 +14,6 @@ namespace DoodleJump3
 
         public float fPlayerPosX = 2.0f;
         public float fPlayerPosY = 328.0f;
-        public float fPlayerPosY = 120.0f;
         public bool go=false;
 
         private float fPlayerVelX = 0.0f;
