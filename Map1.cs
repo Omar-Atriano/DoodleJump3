@@ -214,6 +214,7 @@ namespace DoodleJump3
             //Draw visible tile map//*--------------------DRAW------------------------------
             char c;
             float stepX, stepY;
+            //g.DrawImage(Resource1.bck_2x,);
             for (int x = -1; x < nVisibleTilesX + 2; x++)
             {
                 for (int y = -1; y < nVisibleTilesY + 2; y++)
@@ -221,7 +222,12 @@ namespace DoodleJump3
                     c = GetTile(x + (int)fOffsetX, y + (int)fOffsetY);
                     stepX = x * nTileWidth - fTileOffsetX;
                     stepY = y * nTileHeight - fTileOffsetY;
-                    g.FillRectangle(Brushes.White, stepX, stepY, nTileWidth, nTileHeight);
+                    //g.FillRectangle(Brushes.White, stepX, stepY, nTileWidth, nTileHeight);
+                    g.FillRectangle(Brushes.Red, stepX, stepY, nTileWidth, nTileHeight);
+                    
+                    g.FillRectangle(Brushes.White, stepX + 1, stepY + 1, (nTileWidth - 1)/2, nTileHeight - 1);
+                    g.FillRectangle(Brushes.White, (stepX + 1 + (nTileWidth /2) ), stepY + 1, (nTileWidth - 1) / 2, nTileHeight - 1);
+
                     switch (c)
                     {
                         case '.':
