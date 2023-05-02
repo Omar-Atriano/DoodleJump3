@@ -41,9 +41,11 @@ namespace DoodleJump3
         {
             if (player.FPlayerVelY == 0)// sin brincar o cayendo
             {
+                Play();
                 player.FPlayerVelY = -15;
                 player.Frame(2);
                 player.bPlayerOnGround = false;
+                
             }
             UpdateEnv();
 
@@ -104,6 +106,8 @@ namespace DoodleJump3
                         player.FPlayerVelY = -15;
                         player.Frame(2);
                         player.bPlayerOnGround = false;
+                        
+
                     }
                     break;
             }
@@ -129,7 +133,16 @@ namespace DoodleJump3
             fElapsedTime = 0.05f;
             left = false;
             right = false;
-            //sPlayer = new SoundPlayer(Resource1.best);
+            sPlayer = new SoundPlayer(Resource1.jump);
+        }
+        public void Play()
+        {
+            thread = new Thread(PlayThread);
+            thread.Start();
+        }
+        private void PlayThread()
+        {
+            sPlayer.PlaySync();
         }
 
         private void Form1_Load(object sender, EventArgs e)
