@@ -452,7 +452,7 @@ namespace DoodleJump3
                 }
             }
 
-            g.DrawString("SCORE:: " + score, new Font("Consolas", 10, FontStyle.Italic), Brushes.White, 5, 5);
+            g.DrawString("SCORE:: " + score, new Font("Consolas", 10, FontStyle.Italic), Brushes.Black, 5, 5);
 
             player.MainSprite.posX = (player.fPlayerPosX - fOffsetX) * nTileWidth;
             player.MainSprite.posY = (player.fPlayerPosY - fOffsetY) * nTileHeight;
