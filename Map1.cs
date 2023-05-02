@@ -18,6 +18,8 @@ namespace DoodleJump3
         int divs =1;
         public int nTileWidth = 40;//Estaba en 20
         public int nTileHeight = 20;//Estaba en 20
+        public int nMonsterWidth = 40;//Estaba en 20
+        public int nMonsterHeight = 40;//Estaba en 20
         int nLevelWidth, nLevelHeight;
         private string sLevel;
         public Bitmap bmp;
@@ -153,7 +155,7 @@ namespace DoodleJump3
             sLevel += "..5........";
             sLevel += "......5....";
             sLevel += "5........5.";
-            sLevel += "...5.......";
+            sLevel += "...5...6...";
             sLevel += "...........";
             sLevel += ".....5..5..";
             sLevel += "5..5.......";
@@ -233,7 +235,11 @@ namespace DoodleJump3
 
                             g.DrawImage(Resource1.green,stepX, stepY + nTileHeight / 2, nTileWidth, (nTileHeight/2));
                             break;
-                        
+
+                        case '6':
+
+                            g.DrawImage(Resource1.monster, stepX, stepY + nTileHeight/2, nTileWidth, (nMonsterHeight/4));
+                            break;
                     }
                     //g.DrawRectangle(Pens.Gray, stepX, stepY, nTileWidth, nTileHeight);
                 }

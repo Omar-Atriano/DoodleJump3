@@ -41,14 +41,16 @@ namespace DoodleJump3
 
         public void Right(float fElapsedTime)
         {
-            FPlayerVelX += (bPlayerOnGround ? 25.0f : 15.0f) * fElapsedTime;
+            if (FPlayerVelX<5f)
+                FPlayerVelX += (bPlayerOnGround ? 25.0f : 15.0f) * fElapsedTime;
             if (bPlayerOnGround)
                 mainSprite.MoveRight();
         }
 
         public void Left(float fElapsedTime)
         {
-            FPlayerVelX += (bPlayerOnGround ? -25.0f : -15.0f) * fElapsedTime;
+            if (FPlayerVelX > -5f)
+                FPlayerVelX += (bPlayerOnGround ? -25.0f : -15.0f) * fElapsedTime;
             if (bPlayerOnGround)
                 mainSprite.MoveLeft();
         }
